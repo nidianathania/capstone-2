@@ -1,0 +1,220 @@
+:root {
+    --color-primary-dark: #004C3F; 
+    --color-primary-light: #F2F7EC; 
+    --color-text-dark: #010019;
+    --color-text-grey: #60758A;
+    --color-white: #FFFFFF;
+    --color-border: #DBE0E6;
+}
+
+.auth-page-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-primary-light); 
+}
+
+/* --- KIRI: Informasi Brand --- */
+.auth-info-side {
+    width: 40%;
+    background-color: var(--color-white); 
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+}
+.auth-logo {
+    height: 60px; 
+    margin-bottom: 30px;
+}
+.auth-welcome-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 0 0 20px 0;
+}
+.auth-slogan {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text-grey);
+    max-width: 400px;
+}
+
+
+/* --- KANAN: Formulir --- */
+.auth-form-side {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #F8F8F8; 
+}
+.auth-form-card {
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; 
+}
+.form-header {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- FORM STYLING --- */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    margin-bottom: 6px;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--color-text-grey);
+}
+.input-with-icon input,
+.input-with-icon select {
+    width: 100%;
+    padding: 12px 12px 12px 40px; 
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--color-text-dark);
+    box-sizing: border-box;
+}
+
+/* Placeholder Styling */
+.input-with-icon input::placeholder {
+    color: var(--color-text-grey);
+    opacity: 0.7;
+}
+
+/* Posisi Select Dropdown */
+.select-wrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 40px; 
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 12px center;
+    background-size: 18px;
+}
+.select-wrapper .input-icon {
+    display: none; 
+}
+
+/* Password Toggle */
+.password-toggle input {
+    padding-right: 50px; 
+}
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-grey);
+}
+
+/* BUTTONS */
+.btn-daftar {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.btn-daftar:hover {
+    background-color: #00382d;
+}
+
+/* FOOTER LINK */
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 16px;
+    color: #555;
+}
+.link-masuk {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+.link-masuk:hover {
+    text-decoration: underline;
+}
+
+/* --- SUCCESS MODAL STYLING --- */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.auth-modal-content {
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 3px solid var(--color-primary-dark); 
+}
+.modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 15px;
+}
+.modal-message {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+.modal-button {
+    padding: 12px 30px;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.modal-button:hover {
+    background-color: #00382d;
+}

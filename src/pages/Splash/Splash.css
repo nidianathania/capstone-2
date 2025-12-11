@@ -1,0 +1,126 @@
+:root {
+    --color-orange-start: #FF8C00;
+    --color-orange-end: #FFA500;
+    --color-green-dark: #13554B;
+    --color-white: #FFFFFF;
+}
+
+/* --- Container Utama dan Perubahan Latar Belakang (BG) --- */
+
+.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: var(--color-white);
+    transition: background-color 0.5s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Stage 6: Layar Full Orange Gradasi */
+.splash-stage-6-bg {
+    background: linear-gradient(135deg, var(--color-orange-start) 0%, var(--color-orange-end) 100%);
+    color: var(--color-white);
+}
+
+/* --- Wrapper Konten (Untuk Mengontrol Opacity) --- */
+
+.splash-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* --- Bentuk Morphing (Stage 1 - 4) --- */
+
+/* Shape dasar (Lingkaran Orange Gradien) */
+.splash-shape {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--color-orange-start), var(--color-orange-end));
+    transition: all 0.5s ease-in-out;
+}
+
+/* Stage 2 & 3: Meniru Morphing dengan Border Radius */
+.splash-stage-2 {
+    /* Menggunakan keyframes untuk animasi "squish" */
+    animation: morph-2 0.5s forwards;
+}
+
+.splash-stage-3 {
+    animation: morph-3 0.5s forwards;
+}
+
+.splash-stage-4 {
+    /* Mengecil */
+    transform: scale(0.3);
+    animation: morph-4 0.5s forwards;
+}
+
+/* Stage 5 & 6: Animasi Logo & Teks */
+
+.logo-img {
+    width: 200px;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+.large-logo {
+    width: 300px; /* Diperbesar di Stage 7 */
+}
+
+.splash-welcome-text {
+    font-size: 2rem;
+    color: var(--color-green-dark);
+    margin-top: 20px;
+    transition: opacity 0.5s;
+}
+
+.full-screen-text {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--color-white);
+    /* Animasi fade in saat Stage 6 dimulai */
+    animation: fadeIn 0.5s forwards; 
+}
+
+/* Stage 8: Tagline */
+.splash-tagline {
+    font-size: 1.2rem;
+    color: var(--color-green-dark);
+    margin-top: 15px;
+    font-weight: 500;
+    /* Meniru warna di gambar: Utamakan KESELAMATAN, Jaga KEBERLANJUTAN */
+}
+
+/* --- KEYFRAMES untuk Morphing (Meniru Bentuk) --- */
+
+@keyframes morph-2 {
+    50% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: scale(1.1); }
+    100% { border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%; }
+}
+
+@keyframes morph-3 {
+    50% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    100% { border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; transform: scale(0.8); }
+}
+
+@keyframes morph-4 {
+     to { transform: scale(0.3); opacity: 0; } /* Fade out sebelum stage 5 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
