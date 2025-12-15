@@ -8,7 +8,7 @@ import Splash from '../pages/Splash/Splash.jsx';
 import LandingPage from '../pages/LandingPage.jsx'; 
 import LoginPage from '../pages/auth/Login.jsx';
 import RegisterPage from '../pages/auth/Register.jsx';
-import Home from '../pages/Home/Home.jsx'; 
+import Home from "../pages/Home/Home.jsx";
 
 // Placeholder
 const PengaduanPage = () => <div>Halaman Pengaduan (Belum dibuat)</div>; 
