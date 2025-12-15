@@ -21,3 +21,11 @@ export default {
   query: (text, params) => pool.query(text, params),
   pool
 };
+pool
+  .query("SELECT NOW()")
+  .then((res) => {
+    console.log("✅ DB CONNECTED:", res.rows[0]);
+  })
+  .catch((err) => {
+    console.error("❌ DB CONNECTION FAILED:", err.message);
+  });
